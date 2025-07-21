@@ -41,8 +41,8 @@ const ChatBot = () => {
     if (!hasShownWelcome) {
       setTimeout(() => {
         addBotMessage(
-          "🚀 ¡ALERTA EMPRESARIAL CRÍTICA!\n\nSoy Carlos Mendoza, el especialista #1 en automatización empresarial de España.\n\nDIAGNÓSTICO INMEDIATO: Tu empresa está perdiendo 187.200€ AL MES por no tener IA trabajando 24/7.\n\nDATOS REALES:\n💸 40% de llamadas perdidas = 74.880€/mes\n💸 Clientes nocturnos perdidos = 56.160€/mes\n💸 Personal administrativo innecesario = 56.160€/mes\n\n¿Cuál es tu nombre? Necesito cualificarte para la DEMO URGENTE que va a transformar tu negocio.",
-          ["Mi nombre es...", "¿Cómo pierdes tanto dinero?", "Quiero la demo YA", "¿Qué es IAFY exactamente?", "Casos de éxito reales"]
+          "🏥 ¡Hola! Soy Carlos, especialista en automatización para clínicas.\n\nVeo que estás interesado en IAFY. Te ayudo a descubrir cómo puedes:\n\n✅ Atender pacientes 24/7 automáticamente\n✅ Agendar citas sin intervención humana\n✅ Reducir costos hasta 2.500€/mes\n✅ Nunca más perder pacientes por llamadas no contestadas\n\n¿Cuál es tu nombre? Así puedo personalizar la información para tu clínica.",
+          ["Mi nombre es...", "¿Cómo funciona exactamente?", "Quiero ver una demo", "¿Cuánto cuesta?", "Casos de éxito"]
         );
         setHasShownWelcome(true);
       }, 2000);
@@ -53,8 +53,8 @@ const ChatBot = () => {
     if (isOpen && messages.length === 0 && hasShownWelcome) {
       setTimeout(() => {
         addBotMessage(
-          "🔥 ¡PERFECTO! Veo que estás listo para actuar.\n\nComo especialista en ventas con +15 años automatizando empresas, te garantizo que en los próximos 5 minutos vas a descubrir:\n\n✅ Exactamente cuánto dinero pierdes cada día\n✅ Cómo recuperar esas pérdidas en 7 días\n✅ El plan específico para tu empresa\n✅ Garantía total de resultados\n\n¿Cuál es tu nombre? Voy a hacer un análisis personalizado de tu situación.",
-          ["Mi nombre es...", "Analiza mi empresa", "¿Cuánto cuesta?", "Casos de éxito", "Garantías reales"]
+          "👋 ¡Perfecto! Estás en el lugar correcto.\n\nComo especialista en automatización médica, he ayudado a +20 clínicas a transformar su atención al paciente.\n\nEn los próximos minutos descubrirás:\n✅ Cómo IAFY puede automatizar tu clínica\n✅ Casos de éxito reales de otras clínicas\n✅ El proceso de implementación paso a paso\n✅ Inversión y retorno específico\n\n¿Cuál es tu nombre? Así personalizo la información para tu clínica.",
+          ["Mi nombre es...", "¿Cómo funciona?", "Ver casos de éxito", "¿Cuánto cuesta?", "Agendar demo"]
         );
       }, 500);
     }

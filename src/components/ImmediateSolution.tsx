@@ -5,30 +5,30 @@ const ImmediateSolution = () => {
   const solutions = [
     {
       icon: Target,
-      title: 'CAPTURA 100% DE LEADS',
-      description: 'Respuesta instantánea 24/7. Nunca más pierdas un cliente por no contestar.',
+      title: 'Atiende WhatsApp y llamadas sin intervención',
+      description: 'Tu asistente IA responde automáticamente a consultas de pacientes las 24 horas del día.',
       before: 'Pierdes 40% de llamadas',
-      after: 'Capturas 100% de leads',
+      after: 'Atención 24/7 automática',
       improvement: '+150% conversión',
       color: 'success',
       businessIcon: BarChart3
     },
     {
       icon: Zap,
-      title: 'AUTOMATIZACIÓN TOTAL',
-      description: 'WhatsApp, llamadas, agendas. Todo automático sin intervención humana.',
-      before: '4h diarias perdidas',
+      title: 'Agenda citas automáticamente, 24/7',
+      description: 'Los pacientes pueden reservar citas en cualquier momento sin intervención humana.',
+      before: 'Agenda manual limitada',
       after: 'Automatización completa',
-      improvement: '4h ahorradas/día',
+      improvement: '24/7 disponible',
       color: 'primary',
       businessIcon: Activity
     },
     {
       icon: TrendingUp,
-      title: 'REDUCE COSTES OPERATIVOS 70%',
-      description: 'Elimina personal administrativo. La IA hace el trabajo de 3 empleados.',
+      title: 'Reduce hasta 2.500€/mes en plantilla',
+      description: 'Automatiza tareas repetitivas y optimiza los recursos de tu equipo.',
       before: '2.500€/mes en personal',
-      after: '497€/mes todo incluido',
+      after: 'Automatización IA',
       improvement: '2.000€ ahorrados',
       color: 'electric',
       businessIcon: Euro
@@ -53,11 +53,11 @@ const ImmediateSolution = () => {
           </div>
           
           <h2 className="text-5xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-success-100 to-primary-200 mb-8">
-            IAFY: La solución para tu empresa
+            IAFY transforma tu clínica con IA
           </h2>
           <div className="max-w-5xl mx-auto bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 backdrop-blur-sm p-8 rounded-3xl border border-neutral-700/50">
             <p className="text-2xl lg:text-3xl text-neutral-300 leading-relaxed">
-              <span className="text-success-400 font-bold text-3xl">IMPLEMENTACIÓN EN 7 DÍAS.</span> Tu empresa operando 24/7 con IA que nunca duerme, nunca se enferma, nunca pide vacaciones.
+              Tecnología avanzada que trabaja mientras tú descansas. Implementación en 7 días.
             </p>
           </div>
         </div>
@@ -110,28 +110,27 @@ const ImmediateSolution = () => {
           <div className="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 backdrop-blur-sm rounded-3xl p-16 max-w-5xl mx-auto shadow-lg border-2 border-success-400/30">
             <Shield className="w-20 h-20 text-success-400 mx-auto mb-8" />
             <h3 className="text-4xl font-bold text-white mb-6">
-              🚀 IMPLEMENTACIÓN GARANTIZADA EN 7 DÍAS
+              🚀 IMPLEMENTACIÓN EN 7 DÍAS
             </h3>
             <p className="text-2xl text-neutral-300 mb-10">
-              No esperes más. Cada día que pasa, pierdes más dinero. 
-              <span className="text-success-400 font-bold"> Tu competencia ya está usando IA.</span>
+              Demo gratuita en 30 minutos. Implementación completa en 7 días.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mb-10">
               <div className="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-6 rounded-2xl border border-neutral-700/50">
-                <div className="text-3xl font-bold text-success-400 mb-2">DÍA 1-2</div>
-                <div className="text-neutral-300 text-lg">Configuración inicial</div>
-                <div className="text-neutral-400 text-sm">Análisis y setup</div>
+                <div className="text-3xl font-bold text-success-400 mb-2">30 MIN</div>
+                <div className="text-neutral-300 text-lg">Demo gratuita</div>
+                <div className="text-neutral-400 text-sm">Personalizada</div>
               </div>
               <div className="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-6 rounded-2xl border border-neutral-700/50">
-                <div className="text-3xl font-bold text-primary-400 mb-2">DÍA 3-5</div>
-                <div className="text-neutral-300 text-lg">Pruebas y ajustes</div>
-                <div className="text-neutral-400 text-sm">Optimización</div>
+                <div className="text-3xl font-bold text-primary-400 mb-2">7 DÍAS</div>
+                <div className="text-neutral-300 text-lg">Implementación</div>
+                <div className="text-neutral-400 text-sm">Completa</div>
               </div>
               <div className="bg-gradient-to-br from-neutral-800/50 to-neutral-900/50 p-6 rounded-2xl border border-neutral-700/50">
-                <div className="text-3xl font-bold text-gold-400 mb-2">DÍA 6-7</div>
-                <div className="text-neutral-300 text-lg">Lanzamiento</div>
-                <div className="text-neutral-400 text-sm">Operación 24/7</div>
+                <div className="text-3xl font-bold text-gold-400 mb-2">24/7</div>
+                <div className="text-neutral-300 text-lg">Funcionando</div>
+                <div className="text-neutral-400 text-sm">Sin descanso</div>
               </div>
             </div>
 
@@ -141,7 +140,7 @@ const ImmediateSolution = () => {
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-12 py-6 text-2xl font-bold text-white bg-gradient-to-r from-success-600 to-primary-600 hover:from-success-500 hover:to-primary-500 rounded-3xl shadow-lg transform hover:-translate-y-3 hover:scale-105 transition-all duration-300"
             >
-              <span>IMPLEMENTAR AHORA - 7 DÍAS</span>
+              <span>AGENDAR DEMO GRATUITA</span>
               <ArrowRight className="w-8 h-8 ml-4 group-hover:translate-x-2 transition-transform duration-200" />
             </a>
           </div>

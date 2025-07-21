@@ -62,13 +62,13 @@ const Hero = () => {
           {/* Título principal ultra-impactante */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-8 leading-tight">
             <span className="block text-white mb-4">
-              Tu empresa pierde
+              Tu clínica pierde
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-danger-400 via-primary-400 to-success-400 mb-4">
-              187.200€ al mes
+              30.000€ al año
             </span>
             <span className="block text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-              por no tener IA trabajando 24/7
+              por no tener IA
             </span>
           </h1>
 
@@ -76,9 +76,7 @@ const Hero = () => {
           <div className="max-w-5xl mx-auto mb-12">
             <div className="bg-gradient-to-br from-neutral-800/60 to-neutral-900/60 backdrop-blur-sm p-8 rounded-3xl border border-danger-400/30 shadow-spectacular">
               <p className="text-xl md:text-2xl lg:text-3xl text-neutral-200 leading-relaxed mb-6">
-                <span className="text-danger-400 font-bold text-2xl md:text-3xl">CADA MINUTO QUE ESPERAS = 130€ PERDIDOS.</span>
-                <br />
-                Mientras lees esto, tu competencia está capturando clientes que deberían ser tuyos con IA que nunca duerme.
+                Automatización médica 24/7. Atiende pacientes, agenda citas automáticamente y reduce costos hasta 2.500€/mes.
               </p>
               
               {/* Contador de pérdidas en tiempo real */}
@@ -86,30 +84,30 @@ const Hero = () => {
                 <div className="bg-gradient-to-br from-danger-900/40 to-neutral-900/60 p-6 rounded-2xl border border-danger-500/30">
                   <div className="flex items-center justify-center mb-3">
                     <Clock className="w-6 h-6 text-danger-400 mr-2" />
-                    <span className="text-danger-400 font-bold">POR MINUTO</span>
+                    <span className="text-danger-400 font-bold">POR DÍA</span>
                   </div>
                   <div className="text-3xl font-black text-white flex items-center justify-center">
-                    <span className="text-danger-400">-130</span>
+                    <span className="text-danger-400">-83</span>
                     <Euro className="w-6 h-6 text-danger-400 ml-1" />
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-primary-900/40 to-neutral-900/60 p-6 rounded-2xl border border-primary-500/30">
                   <div className="flex items-center justify-center mb-3">
                     <Activity className="w-6 h-6 text-primary-400 mr-2" />
-                    <span className="text-primary-400 font-bold">POR DÍA</span>
+                    <span className="text-primary-400 font-bold">POR MES</span>
                   </div>
                   <div className="text-3xl font-black text-white flex items-center justify-center">
-                    <span className="text-primary-400">-6.240</span>
+                    <span className="text-primary-400">-2.500</span>
                     <Euro className="w-6 h-6 text-primary-400 ml-1" />
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-success-900/40 to-neutral-900/60 p-6 rounded-2xl border border-success-500/30">
                   <div className="flex items-center justify-center mb-3">
                     <BarChart3 className="w-6 h-6 text-success-400 mr-2" />
-                    <span className="text-success-400 font-bold">POR MES</span>
+                    <span className="text-success-400 font-bold">POR AÑO</span>
                   </div>
                   <div className="text-3xl font-black text-white flex items-center justify-center">
-                    <span className="text-success-400">-187.200</span>
+                    <span className="text-success-400">-30.000</span>
                     <Euro className="w-6 h-6 text-success-400 ml-1" />
                   </div>
                 </div>
@@ -121,18 +119,18 @@ const Hero = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-gradient-to-br from-success-900/30 to-neutral-900/50 p-8 rounded-3xl border border-success-500/30 shadow-lg">
               <Target className="w-12 h-12 text-success-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">CAPTURA 100% DE LEADS</h3>
-              <p className="text-neutral-300">Respuesta instantánea 24/7. Nunca más pierdas un cliente por no contestar.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Atiende pacientes 24/7</h3>
+              <p className="text-neutral-300">Respuesta automática a WhatsApp y llamadas sin intervención humana</p>
             </div>
             <div className="bg-gradient-to-br from-primary-900/30 to-neutral-900/50 p-8 rounded-3xl border border-primary-500/30 shadow-lg">
               <Zap className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">AUTOMATIZACIÓN TOTAL</h3>
-              <p className="text-neutral-300">WhatsApp, llamadas, agendas. Todo automático sin intervención humana.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Agenda citas automáticamente</h3>
+              <p className="text-neutral-300">Sistema inteligente que gestiona tu agenda sin errores humanos</p>
             </div>
             <div className="bg-gradient-to-br from-electric-900/30 to-neutral-900/50 p-8 rounded-3xl border border-electric-500/30 shadow-lg">
               <TrendingUp className="w-12 h-12 text-electric-400 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-white mb-3">ROI 320% GARANTIZADO</h3>
-              <p className="text-neutral-300">Recuperas la inversión en 30 días o te devolvemos el dinero.</p>
+              <h3 className="text-xl font-bold text-white mb-3">Reduce costos hasta 2.500€/mes</h3>
+              <p className="text-neutral-300">Automatiza tareas repetitivas y optimiza recursos</p>
             </div>
           </div>
 
@@ -146,20 +144,20 @@ const Hero = () => {
             >
               <div className="absolute -inset-2 bg-gradient-to-r from-danger-500 via-primary-500 to-success-500 rounded-2xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
               <span className="relative flex items-center">
-                <AlertTriangle className="w-6 h-6 mr-3 animate-pulse" />
-                DETÉN LAS PÉRDIDAS INMEDIATAMENTE
+                <Calendar className="w-6 h-6 mr-3" />
+                Demo gratuita en 30 minutos
                 <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-200" />
               </span>
             </a>
 
             <a
-              href="https://wa.me/34621482256?text=🚨%20URGENTE%20-%20Mi%20empresa%20está%20perdiendo%20187.200€%20al%20mes%0A%0AHola%20Carlos,%20he%20visto%20que%20mi%20empresa%20está%20perdiendo%20dinero%20cada%20minuto%20sin%20IA.%0A%0ANECESITO%20una%20demo%20URGENTE%20para%20parar%20las%20pérdidas.%0A%0A¿Cuándo%20podemos%20hablar?"
+              href="https://wa.me/34621482256?text=Hola%2C%20tengo%20una%20cl%C3%ADnica%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20IAFY%20y%20la%20automatizaci%C3%B3n%20con%20IA."
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-primary-400 border-2 border-primary-400/50 hover:bg-primary-400/10 hover:border-primary-400 rounded-2xl transform hover:scale-105 transition-all duration-300"
             >
               <Phone className="w-5 h-5 mr-3" />
-              HABLAR CON ESPECIALISTA AHORA
+              Hablar por WhatsApp
             </a>
           </div>
 
@@ -167,30 +165,20 @@ const Hero = () => {
           <div className="flex flex-wrap justify-center items-center gap-8 text-neutral-400">
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-success-400" />
-              <span className="font-medium">30 días garantía</span>
+              <span className="font-medium">Demo gratuita</span>
             </div>
             <div className="flex items-center space-x-2">
               <CheckCircle className="w-5 h-5 text-primary-400" />
-              <span className="font-medium">Sin permanencia</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <CheckCircle className="w-5 h-5 text-electric-400" />
               <span className="font-medium">Implementación en 7 días</span>
             </div>
             <div className="flex items-center space-x-2">
-              <CheckCircle className="w-5 h-5 text-gold-400" />
-              <span className="font-medium">+50 empresas confían en nosotros</span>
+              <CheckCircle className="w-5 h-5 text-electric-400" />
+              <span className="font-medium">Sin permanencia</span>
             </div>
-          </div>
-
-          {/* Urgencia final */}
-          <div className="mt-12 bg-gradient-to-r from-danger-900/40 to-primary-900/40 backdrop-blur-sm p-6 rounded-2xl border border-danger-400/30 max-w-4xl mx-auto">
-            <p className="text-danger-300 font-bold text-lg mb-2">
-              ⚠️ CADA SEGUNDO QUE ESPERAS = MÁS DINERO PERDIDO
-            </p>
-            <p className="text-neutral-300">
-              Tu competencia ya está usando IA para capturar TUS clientes. ¿Hasta cuándo vas a permitir que te roben TU dinero?
-            </p>
+            <div className="flex items-center space-x-2">
+              <CheckCircle className="w-5 h-5 text-gold-400" />
+              <span className="font-medium">+20 clínicas confían en nosotros</span>
+            </div>
           </div>
         </div>
       </div>
