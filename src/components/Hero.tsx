@@ -1,31 +1,75 @@
-import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Calendar, AlertTriangle } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { ArrowRight, Calendar, AlertTriangle, Volume2, VolumeX, Play } from 'lucide-react';
 
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // Intentar reproducir con audio primero
-      const playWithAudio = async () => {
+      // Configurar eventos del video
+      const handleLoadStart = () => setIsLoading(true);
+      const handleCanPlay = () => setIsLoading(false);
+      const handlePlay = () => setIsPlaying(true);
+      const handlePause = () => setIsPlaying(false);
+
+      video.addEventListener('loadstart', handleLoadStart);
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('play', handlePlay);
+      video.addEventListener('pause', handlePause);
+
+      // Intentar reproducir con audio
+      const playVideo = async () => {
         try {
           video.muted = false;
+          setIsMuted(false);
           await video.play();
         } catch (error) {
           // Si falla con audio, intentar sin audio
           try {
             video.muted = true;
+            setIsMuted(true);
             await video.play();
           } catch (secondError) {
             console.log('Autoplay no permitido');
+            setIsLoading(false);
           }
         }
       };
       
-      playWithAudio();
+      // Delay para asegurar que el video esté listo
+      setTimeout(playVideo, 500);
+
+      return () => {
+        video.removeEventListener('loadstart', handleLoadStart);
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('play', handlePlay);
+        video.removeEventListener('pause', handlePause);
+      };
     }
   }, []);
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = !video.muted;
+      setIsMuted(video.muted);
+    }
+  };
+
+  const togglePlay = () => {
+    const video = videoRef.current;
+    if (video) {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  };
 
   return (
     <>
@@ -42,6 +86,8 @@ const Hero = () => {
                     src="/5841271165010691996-removebg.png" 
                     alt="IAFY Logo" 
                     className="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -81,8 +127,8 @@ const Hero = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900/30 to-purple-900/30 overflow-hidden">
-        {/* Efectos de fondo */}
-        <div className="absolute inset-0">
+        {/* Efectos de fondo optimizados */}
+        <div className="absolute inset-0 will-change-transform">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
@@ -169,14 +215,24 @@ const Hero = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
                 
                 <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-sm rounded-3xl border border-slate-700/50 overflow-hidden shadow-2xl">
-                  <div className="aspect-video">
+                  <div className="aspect-video relative">
+                    {/* Loading indicator */}
+                    {isLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-slate-800 text-white z-10">
+                        <div className="text-center">
+                          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                          <p className="text-slate-300">Cargando video...</p>
+                        </div>
+                      </div>
+                    )}
+
                     <video
                       ref={videoRef}
                       className="w-full h-full object-cover rounded-3xl"
                       loop
                       playsInline
                       preload="metadata"
-                      controls
+                      muted={isMuted}
                     >
                       <source src="https://videomp46523.live-website.com/wp-content/uploads/2025/07/VIDEO-WEBINAR-PREVIO-A-DEMO-2.mp4" type="video/mp4" />
                       <div className="flex items-center justify-center h-full bg-slate-800 text-white">
@@ -184,14 +240,56 @@ const Hero = () => {
                           <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                             <div className="w-0 h-0 border-l-8 border-l-white border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
                           </div>
-                          <p>Cargando video...</p>
+                          <p>Tu navegador no soporta video HTML5</p>
                         </div>
                       </div>
                     </video>
+
+                    {/* Controles de video personalizados */}
+                    <div className="absolute top-4 right-4 flex space-x-2">
+                      {/* Botón de audio */}
+                      <button
+                        onClick={toggleMute}
+                        className="bg-black/70 hover:bg-black/90 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg border border-white/20"
+                        title={isMuted ? 'Activar audio' : 'Silenciar audio'}
+                      >
+                        {isMuted ? (
+                          <VolumeX className="w-5 h-5" />
+                        ) : (
+                          <Volume2 className="w-5 h-5" />
+                        )}
+                      </button>
+
+                      {/* Botón de play/pause */}
+                      <button
+                        onClick={togglePlay}
+                        className="bg-black/70 hover:bg-black/90 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-200 transform hover:scale-110 shadow-lg border border-white/20"
+                        title={isPlaying ? 'Pausar' : 'Reproducir'}
+                      >
+                        {isPlaying ? (
+                          <div className="w-5 h-5 flex items-center justify-center">
+                            <div className="w-1.5 h-4 bg-white rounded-sm mr-1"></div>
+                            <div className="w-1.5 h-4 bg-white rounded-sm"></div>
+                          </div>
+                        ) : (
+                          <Play className="w-5 h-5 ml-0.5" />
+                        )}
+                      </button>
+                    </div>
+
+                    {/* Indicador de estado de audio */}
+                    {!isMuted && (
+                      <div className="absolute bottom-4 left-4">
+                        <div className="bg-green-500/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
+                          <Volume2 className="w-4 h-4" />
+                          <span>Audio activado</span>
+                        </div>
+                      </div>
+                    )}
                   </div>
                   
                   {/* Overlay con información */}
-                  <div className="absolute bottom-4 left-4 right-4">
+                  <div className="absolute bottom-4 right-4 left-4">
                     <div className="bg-black/70 backdrop-blur-sm rounded-xl p-4">
                       <div className="text-white font-bold text-lg mb-1">
                         Descubre cómo IAFY automatiza tu empresa

@@ -17,13 +17,19 @@
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #1d4ed8 50%, #ef4444 75%, #3b82f6 100%);
     color: #ffffff;
     overflow-x: hidden;
-    /* Optimizaciones críticas para móvil */
+    /* Optimizaciones críticas para máxima velocidad */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /* Optimización de performance */
+    /* Optimización de performance crítica */
     will-change: scroll-position;
     transform: translateZ(0);
+    /* Optimizaciones adicionales de velocidad */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
   }
 }
 
@@ -214,9 +220,21 @@
   /* Optimizaciones de rendimiento */
   .gpu-accelerated {
     transform: translateZ(0);
+    -webkit-transform: translateZ(0);
     will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   
+  /* Optimizaciones críticas para video */
+  video {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
   /* Slider optimizado */
   .slider {
     background: linear-gradient(to right, #334155, #3b82f6);
@@ -411,15 +429,15 @@
 
     /* Reducir efectos de blur en móvil para mejor performance */
     .backdrop-blur-sm {
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(2px);
     }
     
     .blur-xl {
-      filter: blur(15px);
+      filter: blur(8px);
     }
     
     .blur-3xl {
-      filter: blur(25px);
+      filter: blur(12px);
     }
 
     /* Centrar contenido en móvil */
@@ -481,9 +499,49 @@
     .animate-urgent,
     .animate-spectacular,
     .animate-pulse,
-    .animate-bounce {
+    .animate-bounce,
+    .animate-spin {
       animation: none !important;
     }
+    
+    /* Reducir transformaciones para mejor performance */
+    .transform,
+    .hover\:scale-105,
+    .hover\:scale-110,
+    .hover\:-translate-y-1,
+    .hover\:-translate-y-2,
+    .hover\:-translate-y-3,
+    .hover\:-translate-y-4,
+    .hover\:-translate-y-6 {
+      transform: none !important;
+    }
+  }
+
+  /* Optimizaciones críticas de carga */
+  .lazy-load {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .lazy-load.loaded {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optimización de imágenes */
+  img {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* Optimización de botones para touch */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
 

@@ -1,60 +1,105 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Configuración ULTRA-optimizada para velocidad máxima
+// Configuración ULTRA-optimizada para velocidad máxima y carga instantánea
 export default defineConfig({
   plugins: [react()],
+  // Optimizaciones críticas de desarrollo
+  server: {
+    hmr: {
+      overlay: false,
+    },
+    // Preload de recursos críticos
+    middlewareMode: false,
+  },
   build: {
-    // Optimizaciones críticas de build
+    // Optimizaciones críticas de build para máxima velocidad
     minify: 'terser',
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
         pure_funcs: ['console.log'],
-        passes: 2,
+        passes: 3,
+        unsafe: true,
+        unsafe_comps: true,
+        unsafe_math: true,
       },
       mangle: {
         safari10: true,
+        toplevel: true,
+      },
+      format: {
+        comments: false,
       },
     },
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          icons: ['lucide-react'],
-          router: ['react-router-dom'],
+          // Separar chunks para mejor caching
+          'react-vendor': ['react', 'react-dom'],
+          'router-vendor': ['react-router-dom'],
+          'icons-vendor': ['lucide-react'],
         },
-        chunkFileNames: 'assets/[name]-[hash].js',
-        entryFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Nombres de archivos optimizados para caching
+        chunkFileNames: 'js/[name]-[hash:8].js',
+        entryFileNames: 'js/[name]-[hash:8].js',
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
+            return `img/[name]-[hash:8].[ext]`;
+          }
+          if (/\.(css)$/i.test(assetInfo.name)) {
+            return `css/[name]-[hash:8].[ext]`;
+          }
+          return `assets/[name]-[hash:8].[ext]`;
+        },
+      },
+      // Optimizaciones de tree-shaking
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+        tryCatchDeoptimization: false,
       },
     },
-    // Compresión máxima
+    // Compresión y optimización máxima
     cssCodeSplit: true,
     sourcemap: false,
-    target: 'es2015',
+    target: 'es2020',
     reportCompressedSize: false,
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 500,
+    // Optimizaciones adicionales
+    assetsInlineLimit: 4096,
+    cssMinify: 'esbuild',
   },
   css: {
     postcss: './postcss.config.js',
+    // Optimizaciones CSS
+    devSourcemap: false,
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom'],
-    exclude: ['lucide-react'],
-  },
-  // Configuraciones de rendimiento críticas
-  server: {
-    hmr: {
-      overlay: false,
-    },
+    // Pre-bundling optimizado
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react'],
+    exclude: [],
+    // Forzar re-optimización en desarrollo
+    force: false,
   },
   esbuild: {
-    // Optimizaciones adicionales
+    // Optimizaciones ESBuild para máxima velocidad
     legalComments: 'none',
     minifyIdentifiers: true,
     minifySyntax: true,
     minifyWhitespace: true,
+    treeShaking: true,
+    // Optimizaciones específicas
+    target: 'es2020',
+    platform: 'browser',
+    format: 'esm',
+  },
+  // Configuraciones de performance críticas
+  define: {
+    // Eliminar código de desarrollo en producción
+    __DEV__: false,
   },
 });

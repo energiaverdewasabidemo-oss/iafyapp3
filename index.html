@@ -25,12 +25,62 @@
     <meta name="theme-color" content="#3b82f6">
     <meta name="robots" content="index, follow">
     <meta name="author" content="IAFY">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- Optimización de carga -->
+    <!-- Optimización crítica de carga ultra-rápida -->
     <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="preload" href="/5841271165010691996-removebg.png" as="image" type="image/png">
+    <link rel="preload" href="https://videomp46523.live-website.com/wp-content/uploads/2025/07/VIDEO-WEBINAR-PREVIO-A-DEMO-2.mp4" as="video" type="video/mp4">
+    
+    <!-- Resource hints críticos -->
+    <link rel="dns-prefetch" href="//wa.me">
+    <link rel="dns-prefetch" href="//calendly.com">
+    <link rel="dns-prefetch" href="//videomp46523.live-website.com">
+    
+    <!-- Optimización de viewport -->
+    <style>
+      /* CSS crítico inline para evitar FOUC */
+      body { 
+        margin: 0; 
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #1d4ed8 50%, #ef4444 75%, #3b82f6 100%);
+        color: #ffffff;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root { min-height: 100vh; }
+      .loading { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh; 
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #1d4ed8 50%, #ef4444 75%, #3b82f6 100%);
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Loading fallback optimizado -->
+      <div class="loading">
+        <div style="text-align: center; color: white;">
+          <div style="width: 40px; height: 40px; border: 4px solid #3b82f6; border-top: 4px solid transparent; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;"></div>
+          <p>Cargando IAFY...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Inline CSS para animación de loading -->
+    <style>
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
