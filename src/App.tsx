@@ -51,7 +51,6 @@ function App() {
           <Route path="/terminos-de-servicio" element={<TermsOfService />} />
         </Routes>
         
-        {/* ChatBot fijo en toda la aplicación */}
         <ChatBot />
       </div>
     </Router>
