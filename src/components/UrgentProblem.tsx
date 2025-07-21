@@ -56,7 +56,7 @@ const UrgentProblem = () => {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-danger-100 to-gold-200 mb-6 md:mb-8 leading-tight">
             Cada minuto que esperas,
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 to-primary-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-danger-400 to-primary-400">
               pierdes 130€ reales
             </span>
           </h2>

@@ -22,12 +22,9 @@ const ChatBot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [userName, setUserName] = useState('');
   const [userCompany, setUserCompany] = useState('');
-  const [userPhone, setUserPhone] = useState('');
-  const [userEmail, setUserEmail] = useState('');
   const [conversationStage, setConversationStage] = useState('initial');
   const [urgencyLevel, setUrgencyLevel] = useState(0);
   const [leadScore, setLeadScore] = useState(0);
-  const [userInterests, setUserInterests] = useState<string[]>([]);
   const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
