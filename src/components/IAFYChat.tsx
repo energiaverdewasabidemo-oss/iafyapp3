@@ -98,11 +98,25 @@ const IAFYChat: React.FC<IAFYChatProps> = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fadeIn"
+      className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center p-4"
+      style={{
+        zIndex: 99999,
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        backdropFilter: 'blur(4px)',
+        position: 'fixed',
+        inset: '0'
+      }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-lg h-[90vh] max-h-[700px] bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl shadow-2xl border border-blue-500/30 flex flex-col animate-scaleIn overflow-hidden"
+        className="relative w-full max-w-lg rounded-2xl shadow-2xl flex flex-col"
+        style={{
+          height: '85vh',
+          maxHeight: '650px',
+          backgroundColor: '#1e293b',
+          border: '3px solid #3b82f6',
+          boxShadow: '0 0 50px rgba(59, 130, 246, 0.5)'
+        }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -136,7 +150,7 @@ const IAFYChat: React.FC<IAFYChatProps> = ({ isOpen, onClose }) => {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4" style={{ backgroundColor: '#0f172a' }}>
           {messages.map((message) => (
             <div
               key={message.id}
