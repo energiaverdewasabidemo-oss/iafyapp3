@@ -13,9 +13,14 @@ const Hero = () => {
           <div className="flex items-center justify-between">
             {/* Logo y título */}
             <div className="flex items-center space-x-6">
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-4 rounded-2xl">
-                  <div className="text-white font-black text-2xl">IAFY</div>
+              <div className="relative group">
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
+                <div className="relative bg-gradient-to-br from-slate-800/90 to-slate-900/90 p-3 rounded-2xl border border-blue-400/30 shadow-lg">
+                  <img
+                    src="/5841271165010691996-removebg.png"
+                    alt="IAFY Logo"
+                    className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
               <div className="hidden lg:block">
