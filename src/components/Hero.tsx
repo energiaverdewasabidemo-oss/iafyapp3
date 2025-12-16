@@ -58,12 +58,11 @@ const Hero = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900/30 to-purple-900/30 overflow-hidden">
-        {/* Efectos de fondo optimizados */}
-        <div className="absolute inset-0 will-change-transform">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-red-500/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-blue-900/20 to-purple-900/20 overflow-hidden">
+        {/* Efectos de fondo ultra-optimizados */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full blur-2xl"></div>
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -141,84 +140,66 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Avatar IA flotante dimensional */}
-            <div className="relative">
+            {/* Avatar IA flotante dimensional - OPTIMIZADO Y PEQUEÑO */}
+            <div className="relative w-full max-w-sm mx-auto">
               <div className="relative group">
-                {/* Anillos dimensionales giratorios */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="absolute w-full h-full border-4 border-blue-500/30 rounded-full animate-spin-slow"></div>
-                  <div className="absolute w-5/6 h-5/6 border-4 border-purple-500/30 rounded-full animate-spin-reverse"></div>
-                  <div className="absolute w-4/6 h-4/6 border-4 border-cyan-500/30 rounded-full animate-spin-slow"></div>
+                {/* Anillos dimensionales giratorios - Reducidos y optimizados */}
+                <div className="absolute inset-0 flex items-center justify-center will-change-transform">
+                  <div className="absolute w-56 h-56 border-2 border-blue-500/20 rounded-full animate-spin-slow"></div>
+                  <div className="absolute w-44 h-44 border-2 border-purple-500/20 rounded-full animate-spin-reverse"></div>
                 </div>
 
-                {/* Portal dimensional de fondo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
-
-                {/* Avatar IA central */}
-                <div className="relative aspect-square flex items-center justify-center">
-                  {/* Efecto de energía */}
-                  <div className="absolute inset-0">
-                    <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400/40 rounded-full blur-2xl animate-float"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-purple-400/40 rounded-full blur-2xl animate-float-delayed"></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-cyan-400/30 rounded-full blur-2xl animate-pulse"></div>
+                {/* Avatar IA central - MÁS PEQUEÑO */}
+                <div className="relative w-56 h-56 mx-auto flex items-center justify-center">
+                  {/* Efecto de energía - Simplificado */}
+                  <div className="absolute inset-0 will-change-transform">
+                    <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-blue-400/25 rounded-full blur-xl animate-float"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-16 h-16 bg-purple-400/25 rounded-full blur-xl animate-float-delayed"></div>
                   </div>
 
-                  {/* Cabeza del avatar */}
-                  <div className="relative z-10 w-48 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-3xl transform rotate-45 group-hover:rotate-90 transition-transform duration-700 shadow-2xl">
-                    <div className="absolute inset-2 bg-gradient-to-br from-slate-900/90 to-slate-800/90 rounded-3xl transform -rotate-45 group-hover:-rotate-90 transition-transform duration-700 flex items-center justify-center">
-                      {/* Ojos IA */}
-                      <div className="flex space-x-8">
-                        <div className="w-4 h-12 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50"></div>
-                        <div className="w-4 h-12 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full animate-pulse shadow-lg shadow-cyan-500/50" style={{ animationDelay: '0.2s' }}></div>
+                  {/* Cabeza del avatar - REDUCIDA 40% */}
+                  <div className="relative z-10 w-28 h-28 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-2xl transform rotate-45 group-hover:rotate-90 transition-transform duration-500 shadow-xl will-change-transform">
+                    <div className="absolute inset-1.5 bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl transform -rotate-45 group-hover:-rotate-90 transition-transform duration-500 flex items-center justify-center">
+                      {/* Ojos IA - REDUCIDOS */}
+                      <div className="flex space-x-5">
+                        <div className="w-2.5 h-7 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full animate-pulse"></div>
+                        <div className="w-2.5 h-7 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Partículas flotantes */}
-                  <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(12)].map((_, i) => (
+                  {/* Partículas flotantes - REDUCIDAS A LA MITAD */}
+                  <div className="absolute inset-0 pointer-events-none will-change-transform">
+                    {[...Array(6)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full animate-particle"
+                        className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full animate-particle"
                         style={{
-                          left: `${Math.random() * 100}%`,
-                          top: `${Math.random() * 100}%`,
-                          animationDelay: `${Math.random() * 3}s`,
-                          animationDuration: `${3 + Math.random() * 2}s`
+                          left: `${25 + Math.random() * 50}%`,
+                          top: `${25 + Math.random() * 50}%`,
+                          animationDelay: `${Math.random() * 2}s`,
+                          animationDuration: `${3 + Math.random()}s`
                         }}
                       ></div>
                     ))}
                   </div>
 
-                  {/* Ondas de energía */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="absolute w-64 h-64 border-2 border-cyan-400/20 rounded-full animate-ping-slow"></div>
-                    <div className="absolute w-72 h-72 border-2 border-purple-400/20 rounded-full animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="absolute w-80 h-80 border-2 border-blue-400/20 rounded-full animate-ping-slow" style={{ animationDelay: '1s' }}></div>
+                  {/* Ondas de energía - REDUCIDAS */}
+                  <div className="absolute inset-0 flex items-center justify-center will-change-transform">
+                    <div className="absolute w-44 h-44 border border-cyan-400/10 rounded-full animate-ping-slow"></div>
+                    <div className="absolute w-52 h-52 border border-purple-400/10 rounded-full animate-ping-slow" style={{ animationDelay: '0.5s' }}></div>
                   </div>
                 </div>
 
-                {/* Insignias flotantes */}
-                <div className="absolute top-8 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-3 rounded-2xl font-bold shadow-xl animate-bounce-slow">
-                  <Sparkles className="w-5 h-5 inline mr-2" />
+                {/* Insignias flotantes - SIMPLIFICADAS */}
+                <div className="absolute top-2 -right-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 rounded-lg font-bold shadow-lg text-xs">
+                  <Sparkles className="w-3 h-3 inline mr-1" />
                   IA Avanzada
                 </div>
 
-                <div className="absolute bottom-8 -left-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-2xl font-bold shadow-xl animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
-                  <Zap className="w-5 h-5 inline mr-2" />
-                  24/7 Activo
-                </div>
-
-                {/* Texto descriptivo */}
-                <div className="absolute -bottom-16 left-0 right-0 text-center">
-                  <div className="inline-block bg-gradient-to-r from-slate-800/90 to-slate-900/90 backdrop-blur-sm border border-blue-400/30 rounded-2xl px-6 py-4">
-                    <p className="text-blue-300 font-bold text-lg">
-                      Tu Asistente IA Dimensional
-                    </p>
-                    <p className="text-slate-400 text-sm mt-1">
-                      Trabajando desde otra dimensión para tu empresa
-                    </p>
-                  </div>
+                <div className="absolute bottom-2 -left-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1.5 rounded-lg font-bold shadow-lg text-xs">
+                  <Zap className="w-3 h-3 inline mr-1" />
+                  24/7
                 </div>
               </div>
             </div>
