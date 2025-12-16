@@ -8,25 +8,18 @@ const Hero = () => {
   return (
     <>
       {/* Header */}
-      <header className="relative z-50 py-6 bg-gradient-to-r from-slate-900/95 to-blue-900/95 backdrop-blur-sm">
+      <header className="relative z-50 py-6 bg-gradient-to-r from-slate-900 to-blue-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo y título */}
             <div className="flex items-center space-x-6">
-              <div className="relative group">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300"></div>
-                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-sm p-4 rounded-3xl border border-white/30">
-                  <img 
-                    src="/5841271165010691996-removebg.png" 
-                    alt="IAFY Logo" 
-                    className="h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                    loading="eager"
-                    decoding="async"
-                  />
+              <div className="relative">
+                <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-4 rounded-2xl">
+                  <div className="text-white font-black text-2xl">IAFY</div>
                 </div>
               </div>
               <div className="hidden lg:block">
-                <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-blue-400/40 rounded-2xl px-6 py-3">
+                <div className="bg-slate-800/90 border border-blue-400/40 rounded-2xl px-6 py-3">
                   <div className="text-white font-bold text-xl">Automatización Empresarial</div>
                   <div className="text-blue-300 text-base">Powered by AI</div>
                 </div>
@@ -72,7 +65,7 @@ const Hero = () => {
             {/* Contenido izquierdo */}
             <div className="space-y-8">
               {/* Badge de urgencia */}
-              <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-red-500/20 to-orange-500/20 backdrop-blur-sm border border-red-500/40 rounded-full px-6 py-3 shadow-lg">
+              <div className="inline-flex items-center space-x-3 bg-red-900/40 border border-red-500/40 rounded-full px-6 py-3 shadow-lg">
                 <AlertTriangle className="w-5 h-5 text-red-400 animate-pulse" />
                 <span className="text-red-300 font-bold">Tu empresa pierde clientes AHORA</span>
               </div>
@@ -92,7 +85,7 @@ const Hero = () => {
               </div>
 
               {/* Subtítulo */}
-              <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm p-6 rounded-2xl border border-blue-400/30">
+              <div className="bg-slate-800/80 p-6 rounded-2xl border border-blue-400/30">
                 <p className="text-xl md:text-2xl text-slate-200 leading-relaxed">
                   <span className="text-blue-400 font-bold">Ecommerce, clínicas, inmobiliarias, despachos, agencias...</span> Cualquier sector que atiende clientes está perdiendo dinero cada día sin IA.
                   <span className="text-red-400 font-bold"> ¿Cuánto está perdiendo TU empresa?</span>
