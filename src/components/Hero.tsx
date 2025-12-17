@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ArrowRight, Calendar, AlertTriangle, Sparkles, Zap, MessageCircle } from 'lucide-react';
-import IAFYChat from './IAFYChat';
 
 const Hero = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
   return (
     <>
       {/* Header */}
@@ -113,13 +110,15 @@ const Hero = () => {
                   </span>
                 </a>
 
-                <button
-                  onClick={() => setIsChatOpen(true)}
+                <a
+                  href="https://calendly.com/iafyagency/30min?month=2025-06"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-blue-400 border-2 border-blue-400/50 hover:bg-blue-400/10 hover:border-blue-400 rounded-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   <span>Hablar con IAfy</span>
-                </button>
+                </a>
               </div>
 
               {/* Garantías */}
@@ -205,9 +204,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-
-      {/* Chat integrado */}
-      <IAFYChat isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
     </>
   );
 };
